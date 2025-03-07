@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAMELINO TECHSHIP PTE.LTD | Premium Maritime & Tech Solutions</title>
+  <meta name="description" content="Camelino TechShip Pte. Ltd delivers innovative maritime and technology solutions, ensuring excellence in ship management, compliance, and digital transformation.">
+
+  <!-- Google Font (Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Camelino TechShip Pte. Ltd",
+      "url": "https://camelino-techship.com",
+      "logo": "assets/img/logo.png",
+      "sameAs": [
+          "https://linkedin.com/company/camelinotechship",
+          "https://twitter.com/camelinotechship"
+      ]
+  }
+  </script>
+
+  <!-- Inline Styles -->
+  <style>
+    /*------------------------------ 
+      VARIABLES & RESET
+    ------------------------------*/
+    :root {
+      --primary: #4B3621;      /* Dark Brown */
+      --secondary: #D2691E;    /* Chocolate/Orange */
+      --accent: #FF8C00;       /* Dark Orange */
+      --light-bg: #F5F5DC;     /* Cream */
+      --light-text: #333333;
+      --transition-speed: 0.3s;
+      --nav-height: 60px;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /*------------------------------
+      HEADER & SIDEBAR NAVIGATION
+    ------------------------------*/
+    header.smart-header {
+      position: sticky;
+      top: 0;
+      z-index: 1100;
+      background-color: var(--light-bg);
+      backdrop-filter: blur(10px);
+      transition: all var(--transition-speed) ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      height: 80px;
+    }
+    .brand-logo img {
+      width: 200px;
+      height: auto;
+      display: block;
+    }
+    /* Toggle Button for Sidebar */
+    .menu-toggle {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--light-text);
+      z-index: 1200;
+    }
+    /* Sidebar Navigation */
+    .sidebar-nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 100%;
+      background-color: var(--light-bg);
+      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+      transform: translateX(100%);
+      transition: transform var(--transition-speed) ease;
+      z-index: 1200;
+      padding-top: var(--nav-height);
+    }
+    /* Active state on hover or when toggled */
+    .sidebar-nav.active {
+      transform: translateX(0);
+    }
+    .sidebar-nav a {
+      display: block;
+      padding: 1rem;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      font-weight: 600;
+      color: var(--light-text);
+      transition: background-color var(--transition-speed) ease;
+    }
+    .sidebar-nav a:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    /*------------------------------
+      SMART HERO SECTION
+    ------------------------------*/
+    .hero-section {
+      position: relative;
+      min-height: 90vh;
+      background: url('assets/img/hero-bg.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to bottom right, rgba(75,54,33,0.7), rgba(210,105,30,0.7));
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .hero-buttons .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color var(--transition-speed) ease;
+    }
+    .btn-primary {
+      background-color: var(--accent);
+      color: #fff;
+    }
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+    .btn-primary:hover, .btn-secondary:hover {
+      opacity: 0.8;
+    }
+    .scroll-indicator {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      font-size: 2rem;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, 10px); }
+    }
+
+    /*------------------------------
+      SERVICES SECTION (Grid Layout)
+    ------------------------------*/
+    .services-section {
+      padding: 4rem 1rem;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .service-card {
+      background-color: var(--primary);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    /* Redesigned Card Icon */
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+      margin: 0 auto 1rem;
+      font-size: 1.8rem;
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover .card-icon {
+      transform: scale(1.1);
+    }
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .service-card p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      min-height: 60px;
+    }
+    .card-cta {
+      background-color: var(--accent);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .card-cta:hover {
+      background-color: #e07b00;
+    }
+
+    /*------------------------------
+      MISSION (ABOUT) SECTION
+    ------------------------------*/
+    .about-section {
+      padding: 4rem 1rem;
+      background-color: var(--secondary);
+      color: #fff;
+    }
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    .about-media {
+      flex: 1 1 400px;
+    }
+    .about-media img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+    .about-content {
+      flex: 1 1 400px;
+    }
+    .about-content .section-title {
+      text-align: left;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    .lead-text {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    /*------------------------------
+      CONTACT SECTION
+    ------------------------------*/
+    .contact-section {
+      padding: 4rem 1rem;
+      background-color: var(--secondary);
+      color: #fff;
+    }
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: flex-start;
+    }
+    .contact-info {
+      flex: 1 1 300px;
+    }
+    .contact-info h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .info-card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .info-card i {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      color: var(--accent);
+    }
+    .contact-form {
+      flex: 1 1 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 4px;
+      border: none;
+      outline: none;
+    }
+    .form-cta {
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color var(--transition-speed) ease;
+    }
+    .form-cta:hover {
+      background-color: #e07b00;
+    }
+
+    /*------------------------------
+      FOOTER SECTION
+    ------------------------------*/
+    .main-footer {
+      background-color: var(--primary);
+      color: #fff;
+      padding: 2rem 1rem;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-section h4 {
+      margin-bottom: 0.5rem;
+    }
+    .social-links a {
+      margin-right: 0.5rem;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    .social-links a:hover {
+      color: var(--accent);
+    }
+    .copyright-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 1rem;
+    }
+    .legal-links a {
+      margin-left: 1rem;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .legal-links a:hover {
+      text-decoration: underline;
+    }
+
+    /*------------------------------
+      UPDATED MODAL STYLES
+    ------------------------------*/
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1300;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(5px);
+      overflow-y: auto;
+      padding: 1rem;
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 700px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: modalZoomIn 0.4s ease;
+      text-align: left;
+      color: #333;
+    }
+    @keyframes modalZoomIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    /* New styling for the modal image */
+    #modal-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2rem;
+      color: var(--accent);
+      cursor: pointer;
+      transition: color var(--transition-speed);
+    }
+    .close-btn:hover {
+      color: var(--secondary);
+    }
+
+    /*------------------------------
+      RESPONSIVE ADJUSTMENTS
+    ------------------------------*/
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .about-container,
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="smart-header">
+    <a href="#home" class="brand-logo">
+      <img src="assets/img/logo1.png" alt="Camelino TechShip" width="220" height="60">
+    </a>
+    <!-- Toggle Button -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Sidebar Navigation -->
+  <nav id="sidebar" class="sidebar-nav">
+    <a href="#home" class="nav-link home-link">Home</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#about" class="nav-link">Our Mission</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </nav>
+
+  <!-- Smart Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h1>Innovating Maritime &amp; Tech Solutions</h1>
+      <p>Your trusted partner in ship management, compliance, and digital transformation.</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn btn-primary">Our Services</a>
+        <a href="#about" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <i class="fas fa-angle-down"></i>
+    </div>
+  </section>
+
+  <!-- Services Section (Grid Layout) -->
+  <section id="services" class="services-section">
+    <h2 class="section-title">Our Expertise</h2>
+    <div class="services-grid container">
+      <div class="service-card" data-service="shipmanagement">
+        <div class="card-icon">
+          <i class="fas fa-ship"></i>
+        </div>
+        <h3>Technical Shipmanagement</h3>
+        <p>Full operational control with real-time monitoring and predictive maintenance.</p>
+        <a class="card-cta">Explore Solutions →</a>
+      </div>
+      <div class="service-card" data-service="drydock">
+        <div class="card-icon">
+          <i class="fas fa-hard-hat"></i>
+        </div>
+        <h3>Drydock Management</h3>
+        <p>Efficient supervision with cost optimization and timeline guarantees.</p>
+        <a class="card-cta">View Case Studies →</a>
+      </div>
+      <div class="service-card" data-service="crew">
+        <div class="card-icon">
+          <i class="fas fa-anchor"></i>
+        </div>
+        <h3>Crew Management</h3>
+        <p>Skilled personnel with thorough training and safety compliance.</p>
+        <a class="card-cta">Learn More →</a>
+      </div>
+      <div class="service-card" data-service="compliance">
+        <div class="card-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Regulatory Compliance</h3>
+        <p>Comprehensive audits and documentation to meet maritime standards.</p>
+        <a class="card-cta">View Details →</a>
+      </div>
+      <div class="service-card" data-service="navigation">
+        <div class="card-icon">
+          <i class="fas fa-route"></i>
+        </div>
+        <h3>Navigation &amp; Route Planning</h3>
+        <p>Advanced systems for optimal route efficiency and fuel savings.</p>
+        <a class="card-cta">Explore Services →</a>
+      </div>
+      <div class="service-card" data-service="safety">
+        <div class="card-icon">
+          <i class="fas fa-user-check"></i>
+        </div>
+        <h3>Safety &amp; Training</h3>
+        <p>Customized programs to enhance onboard safety and operational readiness.</p>
+        <a class="card-cta">Get Started →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission (About) Section -->
+  <section id="about" class="about-section">
+    <div class="about-container container">
+      <div class="about-media">
+        <img src="assets/img/mission.jpg" alt="Our Mission">
+      </div>
+      <div class="about-content">
+        <h2 class="section-title">Our Mission</h2>
+        <p class="lead-text">
+          At Camelino TechShip Pte. Ltd, our mission is to drive innovation in maritime solutions by merging cutting-edge technology with deep industry expertise. We are dedicated to ensuring safety, efficiency, and excellence in every voyage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container container">
+      <div class="contact-info">
+        <h2>Ready to Elevate Your Fleet?</h2>
+        <div class="info-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h4>Address</h4>
+            <p>68 CIRCULAR ROAD, #02-01, SINGAPORE 049422</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h4>Email</h4>
+            <p>info@camelino-techship.com</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Project Requirements" rows="5"></textarea>
+        </div>
+        <button type="submit" class="form-cta">
+          Request Consultation
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-grid container">
+      <div class="footer-section">
+        <h4>Camelino TechShip Pte. Ltd</h4>
+        <p>Innovating Maritime &amp; Tech Solutions</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-bar container">
+      <p>© 2025 CAMELINO TECHSHIP PTE.LTD. All rights reserved</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Updated Modal for Service Details with Image -->
+  <div id="service-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img id="modal-image" src="" alt="Service Image">
+      <h2 id="modal-title">Service Title</h2>
+      <p id="modal-description">Service description goes here.</p>
+    </div>
+  </div>
+
+  <!-- JavaScript for Interactivity -->
+  <script>
+    // Sidebar: Toggle, hover open and close when mouse leaves
+    const sidebar = document.getElementById('sidebar');
+    const menuToggle = document.getElementById('menu-toggle');
+
+    // Open sidebar on click/toggle button
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      sidebar.classList.toggle('active');
+    });
+
+    // Open sidebar on hover over toggle button
+    menuToggle.addEventListener('mouseenter', () => {
+      sidebar.classList.add('active');
+    });
+
+    // Keep sidebar open on mouse enter; close on mouse leave
+    sidebar.addEventListener('mouseenter', () => {
+      sidebar.classList.add('active');
+    });
+    sidebar.addEventListener('mouseleave', () => {
+      sidebar.classList.remove('active');
+    });
+
+    // Close sidebar when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+        sidebar.classList.remove('active');
+      }
+    });
+
+    // Modal functionality for service cards
+    const modal = document.getElementById('service-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalImage = document.getElementById('modal-image');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // Service details content (customize image paths as needed)
+    const serviceDetails = {
+      shipmanagement: {
+        title: "Technical Shipmanagement",
+        description: "Our Technical Shipmanagement service leverages state-of-the-art technology to monitor, control, and optimize your fleet’s performance. With real-time data analytics and proactive maintenance, we ensure peak operational efficiency and safety for every voyage.",
+        image: "assets/img/shipmanagement.jpg"
+      },
+      drydock: {
+        title: "Drydock Management",
+        description: "Our Drydock Management service focuses on maximizing efficiency and minimizing downtime. We manage scheduling, cost optimization, and on-site supervision, ensuring that every drydock operation meets quality and safety standards while keeping you on schedule.",
+        image: "assets/img/drydock.jpg"
+      },
+      crew: {
+        title: "Crew Management",
+        description: "Our Crew Management service provides comprehensive solutions—from recruitment and training to compliance and career development. We build cohesive teams with certified skills and extensive industry experience to navigate the challenges of modern shipping.",
+        image: "assets/img/crew.jpg"
+      },
+      compliance: {
+        title: "Regulatory Compliance",
+        description: "Navigating maritime regulations can be complex. Our Regulatory Compliance service offers in-depth audits, meticulous documentation, and strategic guidance to ensure your operations consistently meet international and local standards.",
+        image: "assets/img/compliance.jpg"
+      },
+      navigation: {
+        title: "Navigation & Route Planning",
+        description: "Efficient navigation and strategic route planning are crucial for reducing costs and enhancing safety. We integrate advanced navigational systems with real-time analytics and weather forecasting to provide optimal, fuel-saving routes.",
+        image: "assets/img/navigation.jpg"
+      },
+      safety: {
+        title: "Safety & Training",
+        description: "Our Safety & Training service is dedicated to creating a secure onboard environment. With customized training programs, emergency drills, and continuous assessments, we help you mitigate risks and uphold the highest safety standards.",
+        image: "assets/img/safety.jpg"
+      }
+    };
+
+    // Attach click event to each service card to show modal details
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const serviceKey = card.getAttribute('data-service');
+        const details = serviceDetails[serviceKey];
+        if(details){
+          modalTitle.textContent = details.title;
+          modalDescription.textContent = details.description;
+          modalImage.src = details.image;
+          modal.style.display = 'block';
+        }
+      });
+    });
+
+    // Close modal when clicking on close button
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', (e) => {
+      if(e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
