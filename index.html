@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Updated Title -->
+  <!-- Final Title -->
   <title>Camelino | Innovative Maritime Products & Services</title>
-  <!-- Updated Description based on final content -->
+  <!-- Final Description -->
   <meta name="description" content="Camelino provides innovative, high-standard maritime products & services: Underwater Services, Afloat Repairs, Equipment Supply, Navigation, Safety, Compliance, and Drydock solutions.">
 
   <!-- Google Font (Inter) -->
@@ -17,29 +17,31 @@
   <!-- Swiper.js CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 
-  <!-- Schema Markup -->
+  <!-- Final Schema Markup -->
   <script type="application/ld+json">
   {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Camelino",
-      "url": "https://camelino-website.com", // <-- UPDATE THIS URL
-      "logo": "assets/img/logo1.png",        // <-- Ensure this path is correct
-      "description": "Providing innovative and cutting-edge products & services of the highest standard.", // Added description from slogan
+      "url": "https://camelino-website.com", // <-- *** UPDATE THIS URL ***
+      "logo": "assets/img/logo1.png",        // <-- *** Ensure this path is correct ***
+      "description": "Providing innovative and cutting-edge products & services of the highest standard.",
       "sameAs": [
-          "https://linkedin.com/company/camelino", // <-- UPDATE placeholders
-          "https://twitter.com/camelino"       // <-- UPDATE placeholders
+          "https://linkedin.com/company/camelino", // <-- *** UPDATE LinkedIn URL ***
+          "https://twitter.com/camelino"       // <-- *** UPDATE Twitter URL ***
       ]
   }
   </script>
 
-  <!-- Inline Styles -->
+  <!-- Final Inline Styles -->
   <style>
     /*------------------------------
       VARIABLES & RESET - Original Palette
     ------------------------------*/
-    :root { /* Styles remain the same as previous version */
-      --primary: #4B3621; --secondary: #D2691E; --accent: #FF8C00; --light-bg: #F5F5DC; --light-text: #333333; --white: #FFFFFF; --transition-speed: 0.3s; --nav-height: 70px;
+    :root {
+      --primary: #4B3621; --secondary: #D2691E; --accent: #FF8C00; --light-bg: #F5F5DC; --light-text: #333333; --white: #FFFFFF; --transition-speed: 0.3s;
+      --nav-height: 70px; /* Default */
+      --nav-height-mobile: 75px; /* Mobile */
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -51,12 +53,20 @@
     img { max-width: 100%; height: auto; display: block; }
 
     /*------------------------------
-      HEADER & SIDEBAR NAVIGATION - Unchanged
+      HEADER & SIDEBAR NAVIGATION
     ------------------------------*/
-    header.smart-header { /* Styles remain the same */ position: sticky; top: 0; z-index: 1100; background-color: rgba(245, 245, 220, 0.9); backdrop-filter: blur(10px); transition: all var(--transition-speed) ease; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: var(--nav-height); }
-    .brand-logo img { max-width: 180px; height: auto; display: block; }
-    .menu-toggle { background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--primary); z-index: 1200; padding: 0.5rem; }
-    .sidebar-nav { /* Styles remain the same */ position: fixed; top: 0; right: 0; width: 280px; height: 100%; background-color: var(--light-bg); box-shadow: -3px 0 15px rgba(0, 0, 0, 0.1); transform: translateX(100%); transition: transform var(--transition-speed) cubic-bezier(0.25, 0.8, 0.25, 1); z-index: 1200; padding-top: calc(var(--nav-height) + 1rem); display: flex; flex-direction: column; }
+    header.smart-header {
+      position: sticky; top: 0; z-index: 1100;
+      background-color: rgba(245, 245, 220, 0.9); backdrop-filter: blur(10px);
+      transition: all var(--transition-speed) ease; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: var(--nav-height);
+    }
+    .brand-logo { display: block; max-width: 180px; flex-shrink: 0; }
+    .brand-logo img { display: block; width: 100%; height: auto; }
+    .menu-toggle { background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--primary); z-index: 1200; padding: 0.5rem; margin-left: auto; }
+    .sidebar-nav { position: fixed; top: 0; right: 0; width: 280px; height: 100%; background-color: var(--light-bg); box-shadow: -3px 0 15px rgba(0, 0, 0, 0.1); transform: translateX(100%); transition: transform var(--transition-speed) cubic-bezier(0.25, 0.8, 0.25, 1); z-index: 1200; padding-top: var(--nav-height); display: flex; flex-direction: column; }
+    @media (max-width: 768px) { .sidebar-nav { padding-top: var(--nav-height-mobile); } }
     .sidebar-nav.active { transform: translateX(0); }
     .sidebar-nav a { display: block; padding: 0.9rem 1.5rem; border-bottom: 1px solid rgba(0, 0, 0, 0.05); font-weight: 600; color: var(--light-text); transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease; font-size: 0.95rem; }
     .sidebar-nav a:hover { background-color: rgba(0, 0, 0, 0.05); color: var(--primary); }
@@ -64,62 +74,57 @@
     .sidebar-nav a.nav-cta:hover { background-color: #e07b00; color: var(--white); }
 
     /*------------------------------
-      SMART HERO SECTION - Slogan Updated
+      SMART HERO SECTION
     ------------------------------*/
-    .hero-section { /* Styles remain the same */ position: relative; min-height: 85vh; background: url('assets/img/hero-bg.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding: 4rem 1rem; }
-    .hero-overlay { /* Styles remain the same */ position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom right, rgba(75,54,33,0.75), rgba(210,105,30,0.65)); z-index: 1; }
-    .hero-content { /* Styles remain the same */ position: relative; z-index: 2; max-width: 900px; }
-    /* Slogan Style */
+    .hero-section { position: relative; min-height: 85vh; background: url('assets/img/hero-bg.jpg') center/cover no-repeat; /* Ensure path is correct */ display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding: 4rem 1rem; }
+    .hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom right, rgba(75,54,33,0.75), rgba(210,105,30,0.65)); z-index: 1; }
+    .hero-content { position: relative; z-index: 2; max-width: 900px; }
     .hero-content h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); margin-bottom: 1.5rem; font-weight: 700; line-height: 1.3; max-width: 800px; margin-left: auto; margin-right: auto; }
-    /* Optional Sub-headline - Keep or remove */
     .hero-content p { font-size: clamp(1rem, 2.5vw, 1.25rem); margin-bottom: 2.5rem; font-weight: 400; max-width: 700px; margin-left: auto; margin-right: auto; }
-    .hero-buttons .btn { /* Styles remain the same */ padding: 0.8rem 2rem; border-radius: 6px; margin: 0.5rem; text-decoration: none; font-weight: 600; transition: all var(--transition-speed) ease; display: inline-block; border: 2px solid transparent; font-size: 1rem; }
+    .hero-buttons .btn { padding: 0.8rem 2rem; border-radius: 6px; margin: 0.5rem; text-decoration: none; font-weight: 600; transition: all var(--transition-speed) ease; display: inline-block; border: 2px solid transparent; font-size: 1rem; }
     .btn-primary { background-color: var(--accent); color: var(--white); border-color: var(--accent); }
     .btn-secondary { background-color: transparent; border-color: var(--accent); color: var(--accent); }
     .btn-primary:hover { background-color: #e07b00; border-color: #e07b00; color: var(--white); transform: translateY(-2px); }
     .btn-secondary:hover { background-color: var(--accent); color: var(--white); transform: translateY(-2px); }
-    .scroll-indicator { /* Styles remain the same */ position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; font-size: 1.8rem; color: rgba(255, 255, 255, 0.7); animation: bounce 2s infinite ease-in-out; }
+    .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; font-size: 1.8rem; color: rgba(255, 255, 255, 0.7); animation: bounce 2s infinite ease-in-out; }
     @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
 
     /*------------------------------
-      SERVICES SECTION - Carousel Styles Unchanged from previous version
+      SERVICES SECTION - Carousel Styles
     ------------------------------*/
-    .services-section { /* Styles remain the same */ padding: 5rem 0; background-color: var(--light-bg); color: var(--light-text); position: relative; }
-    .section-title { /* Styles remain the same */ text-align: center; font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 3rem; font-weight: 700; color: var(--primary); }
+    .services-section { padding: 5rem 0; background-color: var(--light-bg); color: var(--light-text); position: relative; }
+    .section-title { text-align: center; font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 3rem; font-weight: 700; color: var(--primary); }
     .services-carousel-container { max-width: 1300px; width: 95%; margin: 0 auto; position: relative; }
     .swiper-services { width: 100%; padding-top: 1rem; padding-bottom: 1rem; overflow: visible; }
     .swiper-wrapper { align-items: stretch; }
     .swiper-slide { height: auto; display: flex; flex-direction: column; cursor: pointer; pointer-events: auto; }
-    .service-card { /* Styles remain the same */ background-color: var(--primary); color: var(--white); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; height: 100%; width: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.1); pointer-events: none; /* Let slide handle click */ }
+    .service-card { background-color: var(--primary); color: var(--white); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; height: 100%; width: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.1); pointer-events: none; }
     .swiper-slide:not(.swiper-slide-active) .service-card { opacity: 0.5; transform: scale(0.9); }
     .swiper-slide.swiper-slide-active .service-card { opacity: 1; transform: scale(1); box-shadow: 0 10px 30px rgba(75, 54, 33, 0.25); }
-    .card-icon { /* Styles remain the same */ width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), var(--accent)); margin: 0 auto 1.2rem; font-size: 1.8rem; color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.15); transition: transform 0.3s ease; flex-shrink: 0; }
+    .card-icon { width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), var(--accent)); margin: 0 auto 1.2rem; font-size: 1.8rem; color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.15); transition: transform 0.3s ease; flex-shrink: 0; }
     .swiper-slide-active .service-card .card-icon { transform: scale(1.1); }
-    .service-card h3 { /* Styles remain the same */ font-size: 1.4rem; margin-bottom: 1rem; color: var(--white); font-weight: 600; }
-    .service-card p { /* Styles remain the same */ font-size: 1rem; margin-bottom: 1.5rem; flex-grow: 1; color: rgba(255, 255, 255, 0.9); min-height: 80px; }
-    .card-cta { /* Styles remain the same */ display: inline-block; background-color: var(--accent); color: var(--white); padding: 0.5rem 1rem; border-radius: 4px; font-weight: 600; transition: background-color 0.3s ease; align-self: center; margin-top: auto; text-decoration: none; pointer-events: auto; /* Allow click on CTA */ }
+    .service-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--white); font-weight: 600; }
+    .service-card p { font-size: 1rem; margin-bottom: 1.5rem; flex-grow: 1; color: rgba(255, 255, 255, 0.9); min-height: 80px; }
+    .card-cta { display: inline-block; background-color: var(--accent); color: var(--white); padding: 0.5rem 1rem; border-radius: 4px; font-weight: 600; transition: background-color 0.3s ease; align-self: center; margin-top: auto; text-decoration: none; pointer-events: auto; }
     .card-cta:hover { background-color: #e07b00; }
 
     /*------------------------------
-      ABOUT US & MISSION SECTION - Content Updated
+      ABOUT US & MISSION SECTION
     ------------------------------*/
-    .about-section { /* Styles remain the same */ padding: 5rem 1rem; background-color: var(--secondary); color: var(--white); }
-    .about-container { /* Styles remain the same */ display: flex; flex-wrap: wrap; gap: 3rem; max-width: 1200px; margin: 0 auto; align-items: center; }
-    .about-media { /* Styles remain the same */ flex: 1 1 45%; min-width: 300px; }
-    .about-media img { /* Styles remain the same */ width: 100%; height: auto; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); content: url('assets/img/mission.jpg'); /* Check image path */ }
-    .about-content { /* Styles remain the same */ flex: 1 1 50%; }
-    /* Title Style */
+    .about-section { padding: 5rem 1rem; background-color: var(--secondary); color: var(--white); }
+    .about-container { display: flex; flex-wrap: wrap; gap: 3rem; max-width: 1200px; margin: 0 auto; align-items: center; }
+    .about-media { flex: 1 1 45%; min-width: 300px; }
+    .about-media img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); content: url('assets/img/mission.jpg'); /* *** Ensure path is correct *** */ }
+    .about-content { flex: 1 1 50%; }
     .about-content .section-title { text-align: left; margin-bottom: 1.5rem; font-size: clamp(1.8rem, 4vw, 2.2rem); color: var(--white); }
-    /* Mission Heading Style */
     .about-content h3 { font-size: 1.5rem; color: var(--accent); margin-top: 2rem; margin-bottom: 1rem; font-weight: 600; }
-    /* Paragraph Style */
     .about-content p { margin-bottom: 1.5rem; font-size: 1rem; line-height: 1.7; color: rgba(255, 255, 255, 0.9); }
 
     /*------------------------------
-      CONTACT SECTION - Unchanged
+      CONTACT SECTION
     ------------------------------*/
-    .contact-section { /* Styles remain the same */ padding: 5rem 1rem; background-color: var(--secondary); color: var(--white); }
-    .contact-container { /* Styles remain the same */ display: flex; flex-wrap: wrap; gap: 3rem; max-width: 1200px; margin: 0 auto; align-items: flex-start; }
+    .contact-section { padding: 5rem 1rem; background-color: var(--secondary); color: var(--white); }
+    .contact-container { display: flex; flex-wrap: wrap; gap: 3rem; max-width: 1200px; margin: 0 auto; align-items: flex-start; }
     .contact-info { flex: 1 1 350px; }
     .contact-info h2 { font-size: clamp(1.8rem, 4vw, 2.2rem); margin-bottom: 2rem; font-weight: 700; color: var(--white); }
     .info-card { display: flex; align-items: flex-start; margin-bottom: 1.8rem; gap: 1rem; }
@@ -135,25 +140,25 @@
     .form-cta:hover i { transform: translateX(4px); }
 
     /*------------------------------
-      FOOTER SECTION - Unchanged (but check text)
+      FOOTER SECTION
     ------------------------------*/
-    .main-footer { /* Styles remain the same */ background-color: var(--primary); color: rgba(255, 255, 255, 0.85); padding: 3rem 1rem 1.5rem; }
-    .footer-grid { /* Styles remain the same */ display: flex; flex-wrap: wrap; gap: 2.5rem; max-width: 1200px; margin: 0 auto 2rem auto; justify-content: space-between; }
+    .main-footer { background-color: var(--primary); color: rgba(255, 255, 255, 0.85); padding: 3rem 1rem 1.5rem; }
+    .footer-grid { display: flex; flex-wrap: wrap; gap: 2.5rem; max-width: 1200px; margin: 0 auto 2rem auto; justify-content: space-between; }
     .footer-section { flex: 1 1 200px; }
     .footer-section h4 { margin-bottom: 1rem; color: var(--white); font-weight: 600; font-size: 1.1rem; }
-    .footer-section p { font-size: 0.9rem; line-height: 1.6; } /* Check description text here */
+    .footer-section p { font-size: 0.9rem; line-height: 1.6; }
     .social-links a { margin-right: 0.8rem; color: rgba(255, 255, 255, 0.85); font-size: 1.4rem; transition: color var(--transition-speed) ease; }
     .social-links a:hover { color: var(--accent); }
-    .copyright-bar { /* Styles remain the same */ display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 1.5rem; font-size: 0.85rem; }
+    .copyright-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 1.5rem; font-size: 0.85rem; }
     .copyright-bar p { margin-bottom: 0.5rem; }
     .legal-links a { margin-left: 1.5rem; color: rgba(255, 255, 255, 0.85); font-size: 0.85rem; transition: color var(--transition-speed) ease; }
     .legal-links a:hover { color: var(--white); text-decoration: underline; }
 
     /*------------------------------
-      MODAL STYLES - Unchanged
+      MODAL STYLES
     ------------------------------*/
-    .modal { /* Styles remain the same */ display: none; position: fixed; z-index: 1300; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); overflow-y: auto; padding: 2rem 1rem; }
-    .modal-content { /* Styles remain the same */ background-color: var(--white); color: var(--light-text); margin: 5% auto; padding: 2.5rem; border-radius: 10px; max-width: 650px; position: relative; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); animation: modalFadeIn 0.4s ease-out; text-align: left; }
+    .modal { display: none; position: fixed; z-index: 1300; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); overflow-y: auto; padding: 2rem 1rem; }
+    .modal-content { background-color: var(--white); color: var(--light-text); margin: 5% auto; padding: 2.5rem; border-radius: 10px; max-width: 650px; position: relative; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); animation: modalFadeIn 0.4s ease-out; text-align: left; }
     @keyframes modalFadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
     #modal-image { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem; }
     #modal-title { font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem; font-weight: 700; }
@@ -162,10 +167,38 @@
     .close-btn:hover { color: var(--secondary); transform: rotate(90deg); }
 
     /*------------------------------
-      RESPONSIVE ADJUSTMENTS - Unchanged
+      RESPONSIVE ADJUSTMENTS
     ------------------------------*/
-    @media (max-width: 992px) { /* Styles remain the same */ .about-container, .contact-container { gap: 2rem; } .about-media, .about-content, .contact-info, .contact-form { flex-basis: 100%; } .about-content .section-title, .contact-info h2 { text-align: center; } }
-    @media (max-width: 768px) { /* Styles remain the same */ :root { --nav-height: 65px; } header.smart-header { padding: 0 1rem; } .hero-content h1 { font-size: 2.0rem; line-height: 1.35; } .hero-content p { font-size: 1.0rem; } .hero-buttons .btn { padding: 0.7rem 1.5rem; font-size: 0.9rem; } .section-title { font-size: 1.8rem; margin-bottom: 2rem; } .section-padding { padding: 4rem 0; } .about-container, .contact-container { padding-left: 1rem; padding-right: 1rem; } .footer-grid { flex-direction: column; text-align: center; } .social-links { margin-top: 0.5rem; justify-content: center; } .copyright-bar { flex-direction: column; text-align: center; } .legal-links { margin-top: 0.5rem; margin-left: 0; } .legal-links a { margin: 0 0.5rem; } .modal-content { padding: 1.5rem; max-width: 90%; } #modal-title { font-size: 1.5rem; } #modal-image { height: 200px; } .service-card { padding: 1.5rem; } .service-card h3 { font-size: 1.2rem; } .service-card p { font-size: 0.9rem; min-height: 60px; } .card-cta { padding: 0.4rem 0.8rem; font-size: 0.9rem;} }
+    @media (max-width: 992px) {
+      .about-container, .contact-container { gap: 2rem; }
+      .about-media, .about-content, .contact-info, .contact-form { flex-basis: 100%; }
+      .about-content .section-title, .contact-info h2 { text-align: center; }
+    }
+    @media (max-width: 768px) {
+      /* Mobile Header Centered Logo */
+      header.smart-header { height: var(--nav-height-mobile); padding: 0 1rem; position: relative; justify-content: initial; }
+      .brand-logo { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width: 160px; margin: 0; }
+      .menu-toggle { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); margin-left: 0; z-index: 1201; }
+      /* Other mobile rules */
+      .hero-content h1 { font-size: 2.0rem; line-height: 1.35; }
+      .hero-content p { font-size: 1.0rem; }
+      .hero-buttons .btn { padding: 0.7rem 1.5rem; font-size: 0.9rem; }
+      .section-title { font-size: 1.8rem; margin-bottom: 2rem; }
+      .section-padding { padding: 4rem 0; }
+      .about-container, .contact-container { padding-left: 1rem; padding-right: 1rem; }
+      .footer-grid { flex-direction: column; text-align: center; }
+      .social-links { margin-top: 0.5rem; justify-content: center; }
+      .copyright-bar { flex-direction: column; text-align: center; }
+      .legal-links { margin-top: 0.5rem; margin-left: 0; }
+      .legal-links a { margin: 0 0.5rem; }
+      .modal-content { padding: 1.5rem; max-width: 90%; }
+      #modal-title { font-size: 1.5rem; }
+      #modal-image { height: 200px; }
+      .service-card { padding: 1.5rem; }
+      .service-card h3 { font-size: 1.2rem; }
+      .service-card p { font-size: 0.9rem; min-height: 60px; }
+      .card-cta { padding: 0.4rem 0.8rem; font-size: 0.9rem;}
+    }
 
   </style>
 </head>
@@ -174,7 +207,7 @@
   <!-- Header -->
   <header class="smart-header">
     <a href="#home" class="brand-logo">
-      <img src="assets/img/logo1.png" alt="Camelino Logo" width="180" height="49">
+      <img src="assets/img/logo1.png" alt="Camelino Logo"> <!-- *** ENSURE PATH IS CORRECT *** -->
     </a>
     <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu">
       <i class="fas fa-bars"></i>
@@ -185,17 +218,17 @@
   <nav id="sidebar" class="sidebar-nav">
     <a href="#home" class="nav-link home-link">Home</a>
     <a href="#services" class="nav-link">Services</a>
-    <a href="#about" class="nav-link">About Us</a> <!-- Changed from "Our Mission" -->
+    <a href="#about" class="nav-link">About Us</a>
     <a href="#contact" class="nav-link nav-cta">Contact Us</a>
   </nav>
 
-  <!-- Smart Hero Section -->
+  <!-- Smart Hero Section - FINAL CONTENT -->
   <section id="home" class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content container">
-      <!-- CORRECT SLOGAN -->
+      <!-- FINAL SLOGAN -->
       <h1>PROVIDING INNOVATIVE AND CUTTING-EDGE PRODUCTS & SERVICES OF THE HIGHEST STANDARD</h1>
-      <!-- Optional sub-headline - adjust or remove as needed -->
+      <!-- Optional Sub-headline -->
       <p>Your Partner for Premier Maritime Solutions.</p>
       <div class="hero-buttons">
         <a href="#services" class="btn btn-primary">Explore Services</a>
@@ -207,104 +240,44 @@
     </div>
   </section>
 
-  <!-- Services Section (Carousel Layout) -->
+  <!-- Services Section (Carousel Layout) - FINAL CONTENT -->
   <section id="services" class="services-section section-padding">
     <h2 class="section-title">Our Services</h2>
     <div class="services-carousel-container">
-      <!-- Swiper -->
       <div class="swiper swiper-services">
         <div class="swiper-wrapper">
-          <!-- Slides with CORRECTED CONTENT -->
-
           <!-- 1. Underwater Services -->
-          <div class="swiper-slide">
-            <div class="service-card" data-service="underwater">
-              <div class="card-icon"><i class="fas fa-water"></i></div>
-              <h3>Underwater Services</h3>
-              <p>Expert underwater inspections, maintenance, and repairs using advanced diving and ROV technology.</p> <!-- Concise placeholder -->
-              <a href="#" class="card-cta">Learn More</a>
-            </div>
-          </div>
-
+          <div class="swiper-slide"> <div class="service-card" data-service="underwater"> <div class="card-icon"><i class="fas fa-water"></i></div> <h3>Underwater Services</h3> <p>Expert underwater inspections, maintenance, and repairs using advanced technology.</p> <a href="#" class="card-cta">Learn More</a> </div> </div>
           <!-- 2. Afloat Repairs -->
-          <div class="swiper-slide">
-            <div class="service-card" data-service="afloat">
-              <div class="card-icon"><i class="fas fa-wrench"></i></div>
-              <h3>Afloat Repairs</h3>
-              <p>Efficient onboard repairs for hull, machinery, and systems to minimize vessel downtime.</p> <!-- Concise placeholder -->
-              <a href="#" class="card-cta">Learn More</a>
-            </div>
-          </div>
-
+          <div class="swiper-slide"> <div class="service-card" data-service="afloat"> <div class="card-icon"><i class="fas fa-wrench"></i></div> <h3>Afloat Repairs</h3> <p>Efficient onboard repairs for hull, machinery, and systems to minimize downtime.</p> <a href="#" class="card-cta">Learn More</a> </div> </div>
           <!-- 3. Equipment & Spare Parts -->
-          <div class="swiper-slide">
-            <div class="service-card" data-service="equipment">
-              <div class="card-icon"><i class="fas fa-cogs"></i></div>
-              <h3>Equipment & Spare Parts</h3>
-              <!-- CORRECTED Description from prompt -->
-              <p>Leading in OEM supply, installation, and service of equipment on board all types of vessels.</p>
-              <a href="#" class="card-cta">Learn More</a>
-            </div>
-          </div>
-
+          <div class="swiper-slide"> <div class="service-card" data-service="equipment"> <div class="card-icon"><i class="fas fa-cogs"></i></div> <h3>Equipment & Spare Parts</h3> <p>Leading in OEM supply, installation, and service of equipment on board all types of vessels.</p> <a href="#" class="card-cta">Learn More</a> </div> </div>
           <!-- 4. Navigation & Route Planing -->
-          <div class="swiper-slide">
-            <div class="service-card" data-service="navigation">
-              <div class="card-icon"><i class="fas fa-route"></i></div>
-              <h3>Navigation & Route Planing</h3>
-              <p>Advanced systems for optimal route efficiency, safety protocols, and fuel consumption savings.</p> <!-- Refined placeholder -->
-              <a href="#" class="card-cta">Learn More</a>
-            </div>
-          </div>
-
+          <div class="swiper-slide"> <div class="service-card" data-service="navigation"> <div class="card-icon"><i class="fas fa-route"></i></div> <h3>Navigation & Route Planing</h3> <p>Advanced systems for optimal route efficiency, safety, and fuel savings.</p> <a href="#" class="card-cta">Learn More</a> </div> </div>
           <!-- 5. Safety and Training -->
-          <div class="swiper-slide">
-            <div class="service-card" data-service="safety">
-              <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-              <h3>Safety and Training</h3>
-              <p>Customized programs and certified training ensuring crew competency and onboard safety.</p> <!-- Refined placeholder -->
-              <a href="#" class="card-cta">Learn More</a>
-            </div>
-          </div>
-
+          <div class="swiper-slide"> <div class="service-card" data-service="safety"> <div class="card-icon"><i class="fas fa-shield-alt"></i></div> <h3>Safety and Training</h3> <p>Customized programs and certified training ensuring crew competency and safety.</p> <a href="#" class="card-cta">Learn More</a> </div> </div>
           <!-- 6. Regulatory compliance -->
-          <div class="swiper-slide">
-            <div class="service-card" data-service="compliance">
-              <div class="card-icon"><i class="fas fa-clipboard-check"></i></div>
-              <h3>Regulatory Compliance</h3>
-              <p>Ensuring adherence to international and local maritime standards through audits and documentation.</p> <!-- Refined placeholder -->
-              <a href="#" class="card-cta">Learn More</a>
-            </div>
-          </div>
-
+          <div class="swiper-slide"> <div class="service-card" data-service="compliance"> <div class="card-icon"><i class="fas fa-clipboard-check"></i></div> <h3>Regulatory Compliance</h3> <p>Ensuring adherence to maritime standards through audits and documentation.</p> <a href="#" class="card-cta">Learn More</a> </div> </div>
           <!-- 7. Drydock Management -->
-          <div class="swiper-slide">
-            <div class="service-card" data-service="drydock">
-              <div class="card-icon"><i class="fas fa-hard-hat"></i></div>
-              <h3>Drydock Management</h3>
-              <p>Comprehensive project management for drydocking, focusing on efficiency and cost-effectiveness.</p> <!-- Refined placeholder -->
-              <a href="#" class="card-cta">Learn More</a>
-            </div>
-          </div>
-
-        </div> <!-- /swiper-wrapper -->
-      </div> <!-- /swiper-services -->
-    </div> <!-- /services-carousel-container -->
+          <div class="swiper-slide"> <div class="service-card" data-service="drydock"> <div class="card-icon"><i class="fas fa-hard-hat"></i></div> <h3>Drydock Management</h3> <p>Comprehensive project management for drydocking, optimizing time and cost.</p> <a href="#" class="card-cta">Learn More</a> </div> </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- About Us & Mission Section -->
+  <!-- About Us & Mission Section - FINAL CONTENT -->
   <section id="about" class="about-section section-padding">
     <div class="about-container container">
       <div class="about-media">
-        <img src="assets/img/mission.jpg" alt="Camelino Team"> <!-- Check image path -->
+        <img src="assets/img/mission.jpg" alt="Camelino Team discussing maritime solutions"> <!-- *** CHECK PATH *** -->
       </div>
       <div class="about-content">
-        <!-- CORRECTED ABOUT US CONTENT -->
         <h2 class="section-title" style="text-align: left;">About Us</h2>
+        <!-- FINAL ABOUT US TEXT -->
         <p>
           Our team, composed of skilled and experienced professionals, is dedicated to delivering reliable service around the clock. We work tirelessly to meet deadlines and tackle delivery challenges, ensuring our offerings gain the approval of top manufacturers and classification societies.
         </p>
-        <!-- CORRECTED MISSION CONTENT -->
+        <!-- FINAL MISSION TEXT -->
         <h3>Our Mission</h3>
         <p>
           We aim to exceed our customers' expectations by providing cutting-edge and innovative products, along with service excellence that adheres to the highest standards in both local and international markets.
@@ -315,8 +288,24 @@
 
   <!-- Contact Section -->
   <section id="contact" class="contact-section section-padding">
-    <!-- Content Unchanged - Assuming details are correct -->
-    <div class="contact-container container"> <div class="contact-info"> <h2 style="text-align: left;">Get In Touch</h2> <div class="info-card"> <i class="fas fa-map-marker-alt"></i> <div> <h4>Address</h4> <p>68 CIRCULAR ROAD, #02-01, SINGAPORE 049422</p> </div> </div> <div class="info-card"> <i class="fas fa-envelope"></i> <div> <h4>Email</h4> <p><a href="mailto:info@camelino-techship.com" style="color: var(--white);">info@camelino-techship.com</a></p> </div> </div> </div> <form class="contact-form" action="MAILTO:info@camelino-techship.com" method="post" enctype="text/plain"> <div class="form-group"> <input type="text" name="name" placeholder="Full Name" required> </div> <div class="form-group"> <input type="email" name="email" placeholder="Email Address" required> </div> <div class="form-group"> <input type="text" name="subject" placeholder="Subject" required> </div> <div class="form-group"> <textarea name="message" placeholder="Your Message or Inquiry" rows="6" required></textarea> </div> <button type="submit" class="form-cta"> Send Message <i class="fas fa-paper-plane"></i> </button> </form> </div>
+    <!-- Assuming details are correct -->
+    <div class="contact-container container">
+        <div class="contact-info">
+          <h2 style="text-align: left;">Get In Touch</h2>
+          <div class="info-card"> <i class="fas fa-map-marker-alt"></i> <div> <h4>Address</h4> <p>68 CIRCULAR ROAD, #02-01, SINGAPORE 049422</p> </div> </div>
+          <div class="info-card"> <i class="fas fa-envelope"></i> <div> <h4>Email</h4> <p><a href="mailto:info@camelino-techship.com" style="color: var(--white);">info@camelino-techship.com</a></p> </div> </div>
+          <!-- Optional Phone
+          <div class="info-card"> <i class="fas fa-phone-alt"></i> <div> <h4>Phone</h4> <p><a href="tel:+6512345678" style="color: var(--white);">+65 1234 5678</a></p> </div> </div>
+           -->
+        </div>
+        <form class="contact-form" action="MAILTO:info@camelino-techship.com" method="post" enctype="text/plain"> <!-- Basic Mailto - Needs backend -->
+          <div class="form-group"> <input type="text" name="name" placeholder="Full Name" required> </div>
+          <div class="form-group"> <input type="email" name="email" placeholder="Email Address" required> </div>
+          <div class="form-group"> <input type="text" name="subject" placeholder="Subject" required> </div>
+          <div class="form-group"> <textarea name="message" placeholder="Your Message or Inquiry" rows="6" required></textarea> </div>
+          <button type="submit" class="form-cta"> Send Message <i class="fas fa-paper-plane"></i> </button>
+        </form>
+      </div>
   </section>
 
   <!-- Footer -->
@@ -324,7 +313,7 @@
     <div class="footer-grid container">
       <div class="footer-section">
         <h4>Camelino</h4>
-        <!-- Updated Footer Description -->
+        <!-- FINAL FOOTER DESCRIPTION -->
         <p>Providing innovative and cutting-edge products & services of the highest standard.</p>
       </div>
       <div class="footer-section">
@@ -337,16 +326,16 @@
       <div class="footer-section">
         <h4>Connect</h4>
         <div class="social-links">
-          <!-- Update Links -->
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a> <!-- *** UPDATE LINK *** -->
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a> <!-- *** UPDATE LINK *** -->
         </div>
       </div>
     </div>
     <div class="copyright-bar container">
-      <p>© 2024 Camelino. All rights reserved.</p> <!-- Update Year -->
+      <p>© 2024 Camelino. All rights reserved.</p> <!-- Update Year if needed -->
       <div class="legal-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a> <!-- *** UPDATE LINK *** -->
+        <a href="#">Terms of Service</a> <!-- *** UPDATE LINK *** -->
       </div>
     </div>
   </footer>
@@ -364,96 +353,56 @@
   <!-- Swiper.js JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-  <!-- Custom JavaScript for Interactivity -->
+  <!-- Final Custom JavaScript for Interactivity -->
   <script>
-    // Sidebar Interactivity (remains the same)
+    // Sidebar Interactivity - FINAL MERGED LOGIC
     const sidebar = document.getElementById('sidebar');
     const menuToggle = document.getElementById('menu-toggle');
+
     menuToggle.addEventListener('click', (e) => { e.stopPropagation(); sidebar.classList.toggle('active'); });
-    document.addEventListener('click', (event) => { if (sidebar.classList.contains('active') && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) { sidebar.classList.remove('active'); } });
-    sidebar.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => sidebar.classList.remove('active')));
+    menuToggle.addEventListener('mouseenter', () => sidebar.classList.add('active') ); // Original hover open
+    sidebar.addEventListener('mouseenter', () => sidebar.classList.add('active') );    // Original keep open
+    sidebar.addEventListener('mouseleave', () => sidebar.classList.remove('active') ); // Original hover close
+    sidebar.querySelectorAll('.nav-link').forEach(link => { link.addEventListener('click', () => { if (sidebar.classList.contains('active')) sidebar.classList.remove('active'); }); }); // Click link close
+    document.addEventListener('click', (event) => { if (sidebar.classList.contains('active') && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) sidebar.classList.remove('active'); }); // Click outside close
 
-
-    // Modal functionality (remains the same logic)
+    // Modal functionality - FINAL DETAILS OBJECT
     const modal = document.getElementById('service-modal');
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
     const modalImage = document.getElementById('modal-image');
     const closeBtn = document.querySelector('.close-btn');
-
-    // CORRECTED serviceDetails object for Modal content
     const serviceDetails = {
-      underwater: {
-        title: "Underwater Services",
-        description: "Our comprehensive underwater services cover everything from routine inspections using advanced ROVs to complex repairs and maintenance tasks performed by certified divers. We ensure the integrity and performance of submerged structures and vessel hulls.",
-        image: "assets/img/underwater.jpg"
-      },
-      afloat: {
-        title: "Afloat Repairs",
-        description: "Minimize vessel downtime with our expert afloat repair services. We handle a wide range of repairs including hull, machinery, electrical, and piping systems, providing swift and reliable solutions while your vessel remains operational.",
-         image: "assets/img/afloat.jpg"
-       },
-      equipment: {
-        title: "Equipment & Spare Parts Supply",
-        // Using the specific description from prompt for detailed view
-        description: "The company is one of the leading companies in the OEM supply, installation and service of equipment on board all types of vessels. We ensure quality, reliability, and prompt delivery for all your equipment needs.",
-        image: "assets/img/equipment.jpg"
-      },
-      navigation: {
-        title: "Navigation & Route Planing",
-        description: "Leverage our cutting-edge navigation systems and expert meteorological analysis for optimized route planning. We focus on enhancing safety, reducing fuel consumption, and ensuring ETA reliability through data-driven insights.",
-        image: "assets/img/navigation.jpg"
-      },
-      safety: {
-        title: "Safety and Training", // Title match card
-        description: "We offer bespoke safety management systems and comprehensive training programs designed to cultivate a strong safety culture onboard. Our services include risk assessments, emergency preparedness drills, and crew competency development.",
-        image: "assets/img/safety.jpg"
-      },
-      compliance: {
-        title: "Regulatory Compliance",
-        description: "Stay ahead of complex maritime regulations with our expert compliance services. We provide thorough audits, gap analysis, documentation support, and strategic guidance to ensure your fleet meets all flag state, port state, and international requirements (e.g., IMO, ISM, ISPS).",
-        image: "assets/img/compliance.jpg"
-      },
-      drydock: {
-        title: "Drydock Management",
-        description: "Our end-to-end drydock management service ensures efficient project execution. From initial planning and specification writing to shipyard negotiation, on-site supervision, and final reporting, we prioritize quality, budget adherence, and minimal downtime.",
-        image: "assets/img/drydock.jpg"
-      }
+      // FINAL MODAL DESCRIPTIONS based on prompt
+      underwater: { title: "Underwater Services", description: "Comprehensive underwater solutions including hull inspections, propeller polishing, damage assessments, and repairs conducted by certified divers and advanced remotely operated vehicles (ROVs).", image: "assets/img/underwater.jpg" /* CHECK PATH */ },
+      afloat: { title: "Afloat Repairs", description: "Timely and efficient onboard repair services for hull integrity, main and auxiliary machinery, electrical systems, and pipework, ensuring minimal disruption to vessel operations.", image: "assets/img/afloat.jpg" /* CHECK PATH */ },
+      equipment: { title: "Equipment & Spare Parts", description: "The company is one of the leading companies in the OEM supply, installation and service of equipment on board all types of vessels. We provide certified parts and expert service for optimal performance and reliability.", image: "assets/img/equipment.jpg" /* CHECK PATH */ }, // Specific from prompt
+      navigation: { title: "Navigation & Route Planing", description: "Utilizing state-of-the-art ECDIS, weather routing, and performance monitoring systems to ensure safe navigation, optimal route efficiency, and significant fuel savings.", image: "assets/img/navigation.jpg" /* CHECK PATH */ },
+      safety: { title: "Safety and Training", description: "Development and implementation of robust safety management systems (SMS), crew training programs (including STCW), risk assessments, and emergency preparedness drills to foster a strong safety culture.", image: "assets/img/safety.jpg" /* CHECK PATH */ },
+      compliance: { title: "Regulatory Compliance", description: "Expert guidance and support in meeting complex international (IMO, SOLAS, MARPOL), flag state, and port state regulations, including ISM/ISPS audits and certification management.", image: "assets/img/compliance.jpg" /* CHECK PATH */ },
+      drydock: { title: "Drydock Management", description: "Complete oversight of drydocking projects, from specification preparation and shipyard selection to on-site supervision, cost control, and final reporting, ensuring projects are completed on time and within budget.", image: "assets/img/drydock.jpg" /* CHECK PATH */ }
     };
-
-    // Trigger modal ONLY from CTA link
     document.querySelectorAll('.service-card .card-cta').forEach(cta => {
       cta.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation(); // Prevent slide navigation
-        const card = cta.closest('.service-card');
-        const serviceKey = card.getAttribute('data-service');
+        e.preventDefault(); e.stopPropagation();
+        const card = cta.closest('.service-card'); const serviceKey = card.getAttribute('data-service');
         const details = serviceDetails[serviceKey];
         if (details) {
-          modalTitle.textContent = details.title;
-          modalDescription.textContent = details.description;
-          modalImage.src = details.image;
-          modalImage.alt = details.title;
-          modal.style.display = 'block';
-          document.body.style.overflow = 'hidden';
-        } else { console.warn("No details found for service key:", serviceKey); }
+          modalTitle.textContent = details.title; modalDescription.textContent = details.description;
+          modalImage.src = details.image; modalImage.alt = details.title;
+          modal.style.display = 'block'; document.body.style.overflow = 'hidden';
+        } else { console.warn("Modal details not found for:", serviceKey); }
       });
     });
-
     function closeModal() { modal.style.display = 'none'; document.body.style.overflow = ''; }
     closeBtn.addEventListener('click', closeModal);
     window.addEventListener('click', (e) => { if (e.target === modal) { closeModal(); } });
     document.addEventListener('keydown', (e) => { if (e.key === "Escape" && modal.style.display === 'block') { closeModal(); } });
 
-
-    // Swiper Initialization (remains the same as previous version - no buttons/loop)
+    // Swiper Initialization (Final Config)
     const swiper = new Swiper('.swiper-services', {
-      grabCursor: true,
-      centeredSlides: true,
-      loop: false,
-      slideToClickedSlide: true,
-      slidesPerView: 1.4,
-      spaceBetween: 15,
+      grabCursor: true, centeredSlides: true, loop: false, slideToClickedSlide: true,
+      slidesPerView: 1.4, spaceBetween: 15,
       a11y: { slideLabelMessage: 'Service card {{index}} of {{slidesLength}}' },
       breakpoints: {
         640: { slidesPerView: 1.8, spaceBetween: 20 },
@@ -462,7 +411,6 @@
         1200: { slidesPerView: 3, spaceBetween: 35 }
       }
     });
-
   </script>
 </body>
 </html>
